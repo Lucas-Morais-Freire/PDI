@@ -1,0 +1,10 @@
+^C:\USERS\LUCAS\ONEDRIVE\ÁREA DE TRABALHO\PROJETOS\GITHUB\PDI\CONTAR_BOLHAS\BUILD\CMAKEFILES\8C1F9454246D33A9BEDE74FC5D159625\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/contar_bolhas" "-BC:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/contar_bolhas/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/contar_bolhas/build/count_bubbles.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lucas\OneDrive\Área de Trabalho\Projetos\github\PDI\contar_bolhas\build\CMakeFiles\8c1f9454246d33a9bede74fc5d159625\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1C01E9E8-6832-30CF-AD79-AD7C8CB1740E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

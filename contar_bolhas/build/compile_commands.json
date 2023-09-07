@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/contar_bolhas/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/count_bubbles.dir/includes_CXX.rsp  -o CMakeFiles\\count_bubbles.dir\\count_bubbles.cpp.obj -c \"C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\contar_bolhas\\count_bubbles.cpp\"",
+  "file": "C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/contar_bolhas/count_bubbles.cpp",
+  "output": "CMakeFiles/count_bubbles.dir/count_bubbles.cpp.obj"
+}
+]
