@@ -1,0 +1,3 @@
+C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/steganography/build/CMakeFiles/steganography.dir
+C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/steganography/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/steganography/build/CMakeFiles/ZERO_CHECK.dir

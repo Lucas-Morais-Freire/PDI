@@ -1,0 +1,10 @@
+^C:\USERS\LUCAS\ONEDRIVE\ÁREA DE TRABALHO\PROJETOS\GITHUB\PDI\STEGANOGRAPHY\BUILD\CMAKEFILES\2A6FA1CC5FC90C041A7DB94F15E45018\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/steganography" "-BC:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/steganography/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/steganography/build/steganography.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
