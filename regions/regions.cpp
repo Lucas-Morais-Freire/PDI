@@ -52,7 +52,8 @@ int main(int argc, char** argv) {
         }
     }
 
-    cv::imshow("test", image);
+    cv::namedWindow("imagem processada", cv::WINDOW_NORMAL);
+    cv::imshow("imagem processada", image);
     cv::waitKey();
 
     return 0;
