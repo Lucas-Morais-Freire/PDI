@@ -2,6 +2,7 @@
 #include <opencv2/opencv.hpp>
 #include <sstream>
 #include <string>
+#include <omp.h>
 
 #define M_PI 3.14159265358979323846
 
@@ -19,33 +20,33 @@ int PERIODOS = 4;
  * @param sw metade da largura da semirreta.
  * @param c  cor da reta.
  */
-void drawLine(int x1, int y1, int x2, int y2, cv::Mat* m, double sw, cv::Vec3b* c) {
+void drawLine(double xa, double ya, double xb, double yb, cv::Mat* m, double sw, cv::Vec3b* c) {
 	// determinar a ordem dos pontos no plano
-	// P1 = (xmin, ymin) e P2 = (xmax, ymax)
-	int xmin = x1 < x2 ? x1 : x2;
-	int xmax = x1 >= x2 ? x1 : x2;
-	int ymin = y1 < y2 ? y1 : y2;
-	int ymax = y1 >= y2 ? y1 : y2;
+	// P1 = (xa, ya) e P2 = (xb, yb)
+	double xmin = xa < xb ? xa : xb;
+	double xmax = xa >= xb ? xa : xb;
+	double ymin = ya < yb ? ya : yb;
+	double ymax = ya >= yb ? ya : yb;
 	
 	// determinar os limites da regiao retangular de teste
-	x1 = xmin - (int)sw - 1 < 0 ? 0 : xmin - (int)sw - 1;
-	y1 = ymin - (int)sw - 1 < 0 ? 0 : ymin - (int)sw - 1;
-	x2 = xmax + (int)sw + 1 >= m->rows ? m->rows - 1 : xmax + (int)sw + 1;
-	y2 = ymax + (int)sw + 1 >= m->cols ? m->cols - 1 : ymax + (int)sw + 1;
+	int x1 = xmin - sw < 0 ? 0 : (int)(xmin - sw);
+	int y1 = ymin - sw < 0 ? 0 : (int)(ymin - sw);
+	int x2 = xmax + sw >= m->rows ? m->rows - 1 : (int)(xmax + sw) + 1;
+	int y2 = ymax + sw >= m->cols ? m->cols - 1 : (int)(ymax + sw) + 1;
 
 	double d;
-	int pp1;
-	int pp2;
+	double pp1;
+	double pp2;
 	for (int i = x1; i <= x2; i++) {
 		for (int j = y1; j <= y2; j++) {
 			// primeiro, testar se o ponto pode ser projetado perpendicularmente ao segmento de reta.
 			// checar se o produto escalar (P2 - P1)*(P - P1) >= 0 e (P1 - P2)*(P - P2) >= 0.
-			pp1 = (xmax - xmin)*(i - xmin) + (ymax - ymin)*(j - ymin);
-			pp2 = (xmin - xmax)*(i - xmax) + (ymin - ymax)*(j - ymax);
+			pp1 = (xb - xa)*(i - xa) + (yb - ya)*(j - ya);
+			pp2 = (xa - xb)*(i - xb) + (ya - yb)*(j - yb);
 			if (pp1 >= 0 && pp2 >= 0) {
 				// se sim, calcular a distancia deste ponto ate a reta. baseado nessa distancia, colorir o pixel com esta cor.
 				// d = ||(P2 - P1) x (P - P1)||/||(P2 - P1)||.
-				d = abs((xmax - xmin)*(j - ymin) - (i - xmin)*(ymax - ymin))/sqrt((xmax - xmin)*(xmax - xmin) + (ymax - ymin)*(ymax - ymin));
+				d = abs((xb - xa)*(j - ya) - (i - xa)*(yb - ya))/sqrt((xb - xa)*(xb - xa) + (yb - ya)*(yb - ya));
 				if (d < sw) {
 					// se o ponto estiver dentro da distancia especificada, pintar da cor escolhida.
 					m->at<cv::Vec3b>(i, j) = *c;
@@ -58,9 +59,9 @@ void drawLine(int x1, int y1, int x2, int y2, cv::Mat* m, double sw, cv::Vec3b* 
 			} else {
 				// se o ponto nao puder ser projetado, testar se fará parte da ponta arredondada da linha.
 				if (pp1 < 0) { // se o produto escalar (P2 - P1)*(P - P1) < 0, entao o ponto esta mais proximo de P1.
-					d = sqrt((xmin - i)*(xmin - i) + (ymin - j)*(ymin - j));
+					d = sqrt((xa - i)*(xa - i) + (ya - j)*(ya - j));
 				} else { // se nao, esta mais proximo de P2.
-					d = sqrt((xmax - i)*(xmax - i) + (ymax - j)*(ymax - j));
+					d = sqrt((xb - i)*(xb - i) + (yb - j)*(yb - j));
 				}
 				if (d < sw) { // mesma ideia do caso anterior.
 					m->at<cv::Vec3b>(i, j) = *c;
@@ -102,16 +103,23 @@ int main(int argc, char** argv) {
 
 	// return 0;
 
-	cv::Mat mat(300, 1000, CV_8UC3);
+	cv::Mat mat(1000, 2000, CV_8UC3);
+	#pragma omp parallel for
 	for (int i = 0; i < mat.rows; i++) {
 		for (int j = 0; j < mat.cols; j++) {
 			mat.at<cv::Vec3b>(i, j) = {255, 255, 255};
 		}
 	}
 
-	cv::Vec3b color = {0, 0, 255};
 
-	drawLine(100, 100, 1000, 700, &mat, 5	, &color);
+	cv::Vec3b color = {0, 0, 255};
+	
+	#pragma omp parallel for
+	for (int j = 1; j < mat.cols; j++) {
+		drawLine(200*sin(2*M_PI*(j - 1)/300) + 500, j - 1, 200*sin(2*M_PI*j/300) + 500, j, &mat, 5, &color);
+	}
+
+	// drawLine(200, 100, 100, 700, &mat, 5, &color);
 
 	cv::imwrite("../../output.png", mat);
 
