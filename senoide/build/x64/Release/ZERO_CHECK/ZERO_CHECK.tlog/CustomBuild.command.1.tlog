@@ -1,0 +1,10 @@
+^C:\USERS\LUCAS\ONEDRIVE\ÁREA DE TRABALHO\PROJETOS\GITHUB\PDI\SENOIDE\BUILD\CMAKEFILES\82F45EBF212A378F23EEE7C5F667F9C8\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide" "-BC:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/senoide.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
