@@ -20,7 +20,7 @@ int PERIODOS = 4;
  * @param sw metade da largura da semirreta.
  * @param c  cor da reta.
  */
-void drawLine(double xa, double ya, double xb, double yb, cv::Mat* m, double sw, cv::Vec3b* c) {
+void drawLine(double xa, double ya, double xb, double yb, cv::Mat m, double sw, cv::Vec3b c) {
 	// determinar a ordem dos pontos no plano
 	// P1 = (xa, ya) e P2 = (xb, yb)
 	double xmin = xa < xb ? xa : xb;
@@ -29,10 +29,10 @@ void drawLine(double xa, double ya, double xb, double yb, cv::Mat* m, double sw,
 	double ymax = ya >= yb ? ya : yb;
 	
 	// determinar os limites da regiao retangular de teste
-	int x1 = xmin - sw < 0 ? 0 : (int)(xmin - sw);
-	int y1 = ymin - sw < 0 ? 0 : (int)(ymin - sw);
-	int x2 = xmax + sw >= m->rows ? m->rows - 1 : (int)(xmax + sw) + 1;
-	int y2 = ymax + sw >= m->cols ? m->cols - 1 : (int)(ymax + sw) + 1;
+	int x1 = xmin - sw < 0 ? 0 : (xmin - sw >= m.rows ? m.rows - 1 : (int)(xmin - sw));
+	int y1 = ymin - sw < 0 ? 0 : (ymin - sw >= m.cols ? m.cols - 1 : (int)(ymin - sw));
+	int x2 = xmax + sw >= m.rows ? m.rows - 1 : (xmax + sw < 0 ? 0 : (int)(xmax + sw) + 1);
+	int y2 = ymax + sw >= m.cols ? m.cols - 1 : (ymax + sw < 0 ? 0 : (int)(ymax + sw) + 1);
 
 	double d;
 	double pp1;
@@ -49,12 +49,12 @@ void drawLine(double xa, double ya, double xb, double yb, cv::Mat* m, double sw,
 				d = abs((xb - xa)*(j - ya) - (i - xa)*(yb - ya))/sqrt((xb - xa)*(xb - xa) + (yb - ya)*(yb - ya));
 				if (d < sw) {
 					// se o ponto estiver dentro da distancia especificada, pintar da cor escolhida.
-					m->at<cv::Vec3b>(i, j) = *c;
+					m.at<cv::Vec3b>(i, j) = c;
 				} else if (d < sw + 1) {
 					// se estiver a ate 1 pixel de distancia, interpolar com a cor de fundo.
-					m->at<cv::Vec3b>(i, j)[0] = (uchar)((m->at<cv::Vec3b>(i, j)[0] - (*c)[0])*d + (*c)[0] - (m->at<cv::Vec3b>(i, j)[0] - (*c)[0])*sw);
-					m->at<cv::Vec3b>(i, j)[1] = (uchar)((m->at<cv::Vec3b>(i, j)[1] - (*c)[1])*d + (*c)[1] - (m->at<cv::Vec3b>(i, j)[1] - (*c)[1])*sw);
-					m->at<cv::Vec3b>(i, j)[2] = (uchar)((m->at<cv::Vec3b>(i, j)[2] - (*c)[2])*d + (*c)[2] - (m->at<cv::Vec3b>(i, j)[2] - (*c)[2])*sw);
+					m.at<cv::Vec3b>(i, j)[0] = (uchar)((m.at<cv::Vec3b>(i, j)[0] - c[0])*d + c[0] - (m.at<cv::Vec3b>(i, j)[0] - c[0])*sw);
+					m.at<cv::Vec3b>(i, j)[1] = (uchar)((m.at<cv::Vec3b>(i, j)[1] - c[1])*d + c[1] - (m.at<cv::Vec3b>(i, j)[1] - c[1])*sw);
+					m.at<cv::Vec3b>(i, j)[2] = (uchar)((m.at<cv::Vec3b>(i, j)[2] - c[2])*d + c[2] - (m.at<cv::Vec3b>(i, j)[2] - c[2])*sw);
 				}
 			} else {
 				// se o ponto nao puder ser projetado, testar se fará parte da ponta arredondada da linha.
@@ -64,15 +64,70 @@ void drawLine(double xa, double ya, double xb, double yb, cv::Mat* m, double sw,
 					d = sqrt((xb - i)*(xb - i) + (yb - j)*(yb - j));
 				}
 				if (d < sw) { // mesma ideia do caso anterior.
-					m->at<cv::Vec3b>(i, j) = *c;
+					m.at<cv::Vec3b>(i, j) = c;
 				} else if (d < sw + 1) {
-					m->at<cv::Vec3b>(i, j)[0] = (uchar)((m->at<cv::Vec3b>(i, j)[0] - (*c)[0])*d + (*c)[0] - (m->at<cv::Vec3b>(i, j)[0] - (*c)[0])*sw);
-					m->at<cv::Vec3b>(i, j)[1] = (uchar)((m->at<cv::Vec3b>(i, j)[1] - (*c)[1])*d + (*c)[1] - (m->at<cv::Vec3b>(i, j)[1] - (*c)[1])*sw);
-					m->at<cv::Vec3b>(i, j)[2] = (uchar)((m->at<cv::Vec3b>(i, j)[2] - (*c)[2])*d + (*c)[2] - (m->at<cv::Vec3b>(i, j)[2] - (*c)[2])*sw);
+					m.at<cv::Vec3b>(i, j)[0] = (uchar)((m.at<cv::Vec3b>(i, j)[0] - c[0])*d + c[0] - (m.at<cv::Vec3b>(i, j)[0] - c[0])*sw);
+					m.at<cv::Vec3b>(i, j)[1] = (uchar)((m.at<cv::Vec3b>(i, j)[1] - c[1])*d + c[1] - (m.at<cv::Vec3b>(i, j)[1] - c[1])*sw);
+					m.at<cv::Vec3b>(i, j)[2] = (uchar)((m.at<cv::Vec3b>(i, j)[2] - c[2])*d + c[2] - (m.at<cv::Vec3b>(i, j)[2] - c[2])*sw);
 				}
 			}
 		}
 	}
+}
+
+void drawArrow(double xa, double ya, double xb, double yb, cv::Mat m, double sw, cv::Vec3b c, double asize, double angle) {
+	drawLine(xa, ya, xb, yb, m, sw, c);
+
+	angle = M_PI/180*angle;
+
+	double S = sin(angle); double C = cos(angle);
+	
+	asize = asize/sqrt((xb - xa)*(xb - xa) + (yb - ya)*(yb - ya));
+
+	drawLine(xb, yb, xb + asize*((xa - xb)*C + (yb - ya)*S), yb + asize*((ya - yb)*C + (xa - xb)*S), m, sw, c);
+	drawLine(xb, yb, xb + asize*((xa - xb)*C + (ya - yb)*S), yb + asize*((ya - yb)*C + (xb - xa)*S), m, sw, c);
+}
+
+double iIdx(double y, int mr, double ymax, double ymin) {
+	return mr - 1 - (mr - 1)/(ymax - ymin)*(y - ymin);
+}
+double jIdx(double x, int mc, double xmax, double xmin) {
+	return (mc - 1)/(xmax - xmin)*(x - xmin);
+}
+
+double xpos(double j, int mc, double xmax, double xmin) {
+	return (xmax - xmin)/(mc - 1)*j + xmin;
+}
+double ypos(double i, int mr, double ymax, double ymin) {
+	return -(ymax - ymin)/(mr - 1)*(i - mr + 1) + ymin;
+}
+
+void drawCanvas(double xmin, double ymin, double xmax, double ymax, double xstep, double ystep, cv::Mat m, double sw, cv::Vec3b caxis, cv::Vec3b cbg, double asize, double angle) {
+	for (int i = 0; i < m.rows; i++) {
+		for (int j = 0; j < m.cols; j++) {
+			m.at<cv::Vec3b>(i, j) = cbg;
+		}
+	}
+
+	drawArrow(iIdx(0, m.rows, ymax, ymin), -sw, iIdx(0, m.rows, ymax, ymin), m.cols - 1 - sw, m, sw, caxis, asize, angle);
+	drawArrow(m.rows - 1 - sw, jIdx(0, m.cols, xmax, xmin), sw, jIdx(0, m.cols, xmax, xmin), m, sw, caxis, asize, angle);
+
+	double ang = angle*M_PI/180;
+	double tksize = asize*sin(ang);
+
+	for (double x = xstep; x <= xpos(m.cols - 4 - asize*cos(ang) - 3*sw, m.cols, xmax, xmin); x += xstep) {
+		drawLine(iIdx(0, m.rows, ymax, ymin) - tksize, jIdx(x, m.cols, xmax, xmin), iIdx(0, m.rows, ymax, ymin) + tksize, jIdx(x, m.cols, xmax, xmin), m, sw, caxis);
+	}
+	for (double x = -xstep; x >= xpos(sw + 3, m.cols, xmax, xmin); x -= xstep) {
+		drawLine(iIdx(0, m.rows, ymax, ymin) - tksize, jIdx(x, m.cols, xmax, xmin), iIdx(0, m.rows, ymax, ymin) + tksize, jIdx(x, m.cols, xmax, xmin), m, sw, caxis);
+	}
+	for (double y = ystep; y <= ypos(asize*cos(ang) + 3*sw + 3, m.rows, ymax, ymin); y += ystep) {
+		drawLine(iIdx(y, m.rows, ymax, ymin), jIdx(0, m.cols, xmax, xmin) - tksize, iIdx(y, m.rows, ymax, ymin), jIdx(0, m.cols, xmax, xmin) + tksize, m, sw, caxis);
+	}
+	for (double y = -ystep; y >= ypos(m.rows - asize*cos(ang) - 3*sw - 4, m.rows, ymax, ymin); y -= ystep) {
+		drawLine(iIdx(y, m.rows, ymax, ymin), jIdx(0, m.cols, xmax, xmin) - tksize, iIdx(y, m.rows, ymax, ymin), jIdx(0, m.cols, xmax, xmin) + tksize, m, sw, caxis);
+	}
+
 }
 
 int main(int argc, char** argv) {
@@ -103,25 +158,11 @@ int main(int argc, char** argv) {
 
 	// return 0;
 
-	cv::Mat mat(1000, 2000, CV_8UC3);
-	#pragma omp parallel for
-	for (int i = 0; i < mat.rows; i++) {
-		for (int j = 0; j < mat.cols; j++) {
-			mat.at<cv::Vec3b>(i, j) = {255, 255, 255};
-		}
-	}
+	cv::Mat image(1000, 1000, CV_8UC3);
 
+	drawCanvas(-5, -5, 20, 5, 1, 1, image, 1, {0, 0, 0}, {255, 255, 255}, 20, 20);
 
-	cv::Vec3b color = {0, 0, 255};
-	
-	#pragma omp parallel for
-	for (int j = 1; j < mat.cols; j++) {
-		drawLine(200*sin(2*M_PI*(j - 1)/300) + 500, j - 1, 200*sin(2*M_PI*j/300) + 500, j, &mat, 5, &color);
-	}
-
-	// drawLine(200, 100, 100, 700, &mat, 5, &color);
-
-	cv::imwrite("../../output.png", mat);
+	cv::imwrite("../../output.png", image);
 
 	return 0;
 }
