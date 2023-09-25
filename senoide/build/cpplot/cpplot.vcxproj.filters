@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lucas\OneDrive\Área de Trabalho\Projetos\github\PDI\senoide\cpplot\src\cpplot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lucas\OneDrive\Área de Trabalho\Projetos\github\PDI\senoide\cpplot\src\line.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lucas\OneDrive\Área de Trabalho\Projetos\github\PDI\senoide\cpplot\src\arrow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lucas\OneDrive\Área de Trabalho\Projetos\github\PDI\senoide\cpplot\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C9F2A9A8-7C25-3E12-A111-F1FC738ED1EF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

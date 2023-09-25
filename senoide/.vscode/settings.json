@@ -1,5 +1,4 @@
 {
-    "C_Cpp.default.compilerPath": "cl.exe",
     "files.associations": {
         "algorithm": "cpp",
         "array": "cpp",

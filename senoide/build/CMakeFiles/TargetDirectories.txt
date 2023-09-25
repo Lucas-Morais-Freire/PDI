@@ -1,3 +1,4 @@
 C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/senoide.dir
 C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/ALL_BUILD.dir
 C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/cpplot/CMakeFiles/cpplot.dir

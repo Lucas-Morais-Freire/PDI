@@ -2,9 +2,11 @@
 #include <opencv2/opencv.hpp>
 #include <sstream>
 #include <string>
-#include <omp.h>
-
-#define M_PI 3.14159265358979323846
+#include <cmath>
+#include "cpplot/headers/cpplot.hpp"
+#ifndef M_PI
+    #define M_PI 3.14159265358979323846
+#endif
 
 int SIDE = 256;
 int PERIODOS = 4;
@@ -124,10 +126,15 @@ void drawCanvas(double xmin, double ymin, double xmax, double ymax, double xstep
 	for (double y = ystep; y <= ypos(asize*cos(ang) + 3*sw + 3, m.rows, ymax, ymin); y += ystep) {
 		drawLine(iIdx(y, m.rows, ymax, ymin), jIdx(0, m.cols, xmax, xmin) - tksize, iIdx(y, m.rows, ymax, ymin), jIdx(0, m.cols, xmax, xmin) + tksize, m, sw, caxis);
 	}
-	for (double y = -ystep; y >= ypos(m.rows - asize*cos(ang) - 3*sw - 4, m.rows, ymax, ymin); y -= ystep) {
+	for (double y = -ystep; y >= ypos(m.rows - 4 - sw, m.rows, ymax, ymin); y -= ystep) {
 		drawLine(iIdx(y, m.rows, ymax, ymin), jIdx(0, m.cols, xmax, xmin) - tksize, iIdx(y, m.rows, ymax, ymin), jIdx(0, m.cols, xmax, xmin) + tksize, m, sw, caxis);
 	}
 
+}
+
+void drawFunction(double (*func)(double), double xmin, double xmax, double ymin, double ymax, cv::Mat m, double sw, cv::Vec3b c) {
+	cv::Mat posession(m.rows, m.cols, CV_8U);
+	posession.setTo(0);
 }
 
 int main(int argc, char** argv) {
@@ -158,11 +165,15 @@ int main(int argc, char** argv) {
 
 	// return 0;
 
-	cv::Mat image(1000, 1000, CV_8UC3);
+	Graph g(0, 10, 0, 10, 1000, 1000);
 
-	drawCanvas(-5, -5, 20, 5, 1, 1, image, 1, {0, 0, 0}, {255, 255, 255}, 20, 20);
+	g.drawArrow(0, 0, 10/tan(7*M_PI/18), 10, 5, 100);
 
-	cv::imwrite("../../output.png", image);
+	g.write("../../output1.png");
+	g.setRange(g.xmin(), 20, g.ymin(), g.ymax());
+	g.write("../../output2.png");
+	g.setRes(1000, 500);
+	g.write("../../output3.png");
 
 	return 0;
 }
