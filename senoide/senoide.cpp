@@ -165,14 +165,14 @@ int main(int argc, char** argv) {
 
 	// return 0;
 
-	Graph g(0, 10, 0, 10, 1000, 1000);
+	Graph g(0, 2*M_PI, -2, 2, 1000, 500);
 
-	g.drawArrow(0, 0, 10/tan(7*M_PI/18), 10, 5, 100);
+	g.drawFunc(sin, 3, {0,0,255});
 
 	g.write("../../output1.png");
 	g.setRange(g.xmin(), 20, g.ymin(), g.ymax());
 	g.write("../../output2.png");
-	g.setRes(1000, 500);
+	g.setRes(1000, 250);
 	g.write("../../output3.png");
 
 	return 0;
