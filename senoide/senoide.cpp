@@ -39,15 +39,11 @@ int main(int argc, char** argv) {
 
 	// return 0;
 
-	Graph g(-1, 7, -2, 2, 1000, 500);
+	Graph g(-10, 10, -10, 10, "   xres   =   fqwefqw,    auysgf    =    900asfda.faf");
 
-	g.drawFunc(sin, 0, 2*M_PI, -0.7, 0.7, 2, {0, 255, 255});
+	g.drawFunc(sin, 0.5, {0, 0, 255});
 	
 	g.write("../../output1.png");
-	g.setRange(0.5, 20, -0.5, g.ymax());
-	g.write("../../output2.png");
-	g.setRes(1000, 250);
-	g.write("../../output3.png");
 
 	return 0;
 }
