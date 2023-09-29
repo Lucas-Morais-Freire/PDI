@@ -4,6 +4,9 @@
     <ClCompile Include="C:\Users\lucas\OneDrive\Área de Trabalho\Projetos\github\PDI\senoide\cpplot\src\cpplot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\lucas\OneDrive\Área de Trabalho\Projetos\github\PDI\senoide\cpplot\src\drawing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\lucas\OneDrive\Área de Trabalho\Projetos\github\PDI\senoide\cpplot\src\line.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -11,6 +11,10 @@
 int SIDE = 256;
 int PERIODOS = 4;
 
+double foo(double x) {
+	return (x+1)*x*(x-1);
+}
+
 int main(int argc, char** argv) {
 	// std::stringstream ss_img, ss_yml;
 	// cv::Mat image;
@@ -39,11 +43,18 @@ int main(int argc, char** argv) {
 
 	// return 0;
 
-	Graph g(-10, 10, -10, 10, "   xres   =   fqwefqw,    auysgf    =    900asfda.faf");
+	Graph g(-10, 10, -10, 10, "xres = 4000, yres = 4000");
 
-	g.drawFunc(sin, 0.5, {0, 0, 255});
-	
+	g.drawArrow(-10, 0, 10, 0);
+	g.drawArrow(0, -10, 0, 10);
+
+	g.drawFunc(foo, "xmin = -2, xmax = 2, stroke_weight = 20, ymin = -0.5",cv::Vec3b(128,128,0));
+
 	g.write("../../output1.png");
+	g.setRange(-10, 20, -10, 20);
+	g.write("../../output2.png");
+	g.setRes(1000, 250);
+	g.write("../../output3.png");
 
 	return 0;
 }
