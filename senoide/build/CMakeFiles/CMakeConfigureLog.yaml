@@ -24,7 +24,7 @@ events:
       The output was:
       0
       Versão do MSBuild 17.7.2+d6990bcfa para .NET Framework
-      Compilação de 26/09/2023 13:48:47 iniciada.
+      Compilação de 29/09/2023 19:59:45 iniciada.
       
       Projeto "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\3.26.4-msvc4\\CompilerIdC\\CompilerIdC.vcxproj" no nó 1 (destinos padrão).
       PrepareForBuild:
@@ -52,7 +52,7 @@ events:
           0 Aviso(s)
           0 Erro(s)
       
-      Tempo Decorrido 00:00:00.74
+      Tempo Decorrido 00:00:00.70
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -78,7 +78,7 @@ events:
       The output was:
       0
       Versão do MSBuild 17.7.2+d6990bcfa para .NET Framework
-      Compilação de 26/09/2023 13:48:48 iniciada.
+      Compilação de 29/09/2023 19:59:46 iniciada.
       
       Projeto "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\3.26.4-msvc4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" no nó 1 (destinos padrão).
       PrepareForBuild:
@@ -106,7 +106,7 @@ events:
           0 Aviso(s)
           0 Erro(s)
       
-      Tempo Decorrido 00:00:00.54
+      Tempo Decorrido 00:00:00.49
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -125,8 +125,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/lucas/OneDrive/\u00c1rea de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-33wni3"
-      binary: "C:/Users/lucas/OneDrive/\u00c1rea de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-33wni3"
+      source: "C:/Users/lucas/OneDrive/\u00c1rea de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-gjj385"
+      binary: "C:/Users/lucas/OneDrive/\u00c1rea de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-gjj385"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -135,38 +135,38 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-33wni3
+        Change Dir: C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-gjj385
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_d45fb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Versão do MSBuild 17.7.2+d6990bcfa para .NET Framework
-        Compilação de 26/09/2023 13:48:49 iniciada.
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_60788.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Versão do MSBuild 17.7.2+d6990bcfa para .NET Framework
+        Compilação de 29/09/2023 19:59:47 iniciada.
         
-        Projeto "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-33wni3\\cmTC_d45fb.vcxproj" no nó 1 (destinos padrão).
+        Projeto "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gjj385\\cmTC_60788.vcxproj" no nó 1 (destinos padrão).
         PrepareForBuild:
-          Criando o diretório "cmTC_d45fb.dir\\Debug\\".
-          Criando o diretório "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-33wni3\\Debug\\".
-          Criando o diretório "cmTC_d45fb.dir\\Debug\\cmTC_d45fb.tlog\\".
+          Criando o diretório "cmTC_60788.dir\\Debug\\".
+          Criando o diretório "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gjj385\\Debug\\".
+          Criando o diretório "cmTC_60788.dir\\Debug\\cmTC_60788.tlog\\".
         InitializeBuildStatus:
-          Criando "cmTC_d45fb.dir\\Debug\\cmTC_d45fb.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
-          Tocando "cmTC_d45fb.dir\\Debug\\cmTC_d45fb.tlog\\unsuccessfulbuild".
+          Criando "cmTC_60788.dir\\Debug\\cmTC_60788.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+          Tocando "cmTC_60788.dir\\Debug\\cmTC_60788.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d45fb.dir\\Debug\\\\" /Fd"cmTC_d45fb.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_60788.dir\\Debug\\\\" /Fd"cmTC_60788.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Versão 19.37.32822 para x64
-          CMakeCCompilerABI.c
           Copyright (C) Microsoft Corporation. Todos os direitos reservados.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d45fb.dir\\Debug\\\\" /Fd"cmTC_d45fb.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_60788.dir\\Debug\\\\" /Fd"cmTC_60788.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-33wni3\\Debug\\cmTC_d45fb.exe" /INCREMENTAL /ILK:"cmTC_d45fb.dir\\Debug\\cmTC_d45fb.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-33wni3/Debug/cmTC_d45fb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-33wni3/Debug/cmTC_d45fb.lib" /MACHINE:X64  /machine:x64 cmTC_d45fb.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_d45fb.vcxproj -> C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-33wni3\\Debug\\cmTC_d45fb.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gjj385\\Debug\\cmTC_60788.exe" /INCREMENTAL /ILK:"cmTC_60788.dir\\Debug\\cmTC_60788.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-gjj385/Debug/cmTC_60788.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-gjj385/Debug/cmTC_60788.lib" /MACHINE:X64  /machine:x64 cmTC_60788.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_60788.vcxproj -> C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gjj385\\Debug\\cmTC_60788.exe
         FinalizeBuildStatus:
-          Excluindo o arquivo "cmTC_d45fb.dir\\Debug\\cmTC_d45fb.tlog\\unsuccessfulbuild".
-          Tocando "cmTC_d45fb.dir\\Debug\\cmTC_d45fb.tlog\\cmTC_d45fb.lastbuildstate".
-        Projeto de compilação pronto "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-33wni3\\cmTC_d45fb.vcxproj" (destinos padrão).
+          Excluindo o arquivo "cmTC_60788.dir\\Debug\\cmTC_60788.tlog\\unsuccessfulbuild".
+          Tocando "cmTC_60788.dir\\Debug\\cmTC_60788.tlog\\cmTC_60788.lastbuildstate".
+        Projeto de compilação pronto "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gjj385\\cmTC_60788.vcxproj" (destinos padrão).
         
         Compilação com êxito.
             0 Aviso(s)
             0 Erro(s)
         
-        Tempo Decorrido 00:00:00.53
+        Tempo Decorrido 00:00:00.50
         
       exitCode: 0
   -
@@ -178,8 +178,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/lucas/OneDrive/\u00c1rea de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-oyz50x"
-      binary: "C:/Users/lucas/OneDrive/\u00c1rea de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-oyz50x"
+      source: "C:/Users/lucas/OneDrive/\u00c1rea de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-bdvm8d"
+      binary: "C:/Users/lucas/OneDrive/\u00c1rea de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-bdvm8d"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -188,38 +188,38 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-oyz50x
+        Change Dir: C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-bdvm8d
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_9434b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Versão do MSBuild 17.7.2+d6990bcfa para .NET Framework
-        Compilação de 26/09/2023 13:48:49 iniciada.
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_44693.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Versão do MSBuild 17.7.2+d6990bcfa para .NET Framework
+        Compilação de 29/09/2023 19:59:47 iniciada.
         
-        Projeto "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-oyz50x\\cmTC_9434b.vcxproj" no nó 1 (destinos padrão).
+        Projeto "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bdvm8d\\cmTC_44693.vcxproj" no nó 1 (destinos padrão).
         PrepareForBuild:
-          Criando o diretório "cmTC_9434b.dir\\Debug\\".
-          Criando o diretório "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-oyz50x\\Debug\\".
-          Criando o diretório "cmTC_9434b.dir\\Debug\\cmTC_9434b.tlog\\".
+          Criando o diretório "cmTC_44693.dir\\Debug\\".
+          Criando o diretório "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bdvm8d\\Debug\\".
+          Criando o diretório "cmTC_44693.dir\\Debug\\cmTC_44693.tlog\\".
         InitializeBuildStatus:
-          Criando "cmTC_9434b.dir\\Debug\\cmTC_9434b.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
-          Tocando "cmTC_9434b.dir\\Debug\\cmTC_9434b.tlog\\unsuccessfulbuild".
+          Criando "cmTC_44693.dir\\Debug\\cmTC_44693.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+          Tocando "cmTC_44693.dir\\Debug\\cmTC_44693.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9434b.dir\\Debug\\\\" /Fd"cmTC_9434b.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_44693.dir\\Debug\\\\" /Fd"cmTC_44693.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Versão 19.37.32822 para x64
           CMakeCXXCompilerABI.cpp
           Copyright (C) Microsoft Corporation. Todos os direitos reservados.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9434b.dir\\Debug\\\\" /Fd"cmTC_9434b.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_44693.dir\\Debug\\\\" /Fd"cmTC_44693.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-oyz50x\\Debug\\cmTC_9434b.exe" /INCREMENTAL /ILK:"cmTC_9434b.dir\\Debug\\cmTC_9434b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-oyz50x/Debug/cmTC_9434b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-oyz50x/Debug/cmTC_9434b.lib" /MACHINE:X64  /machine:x64 cmTC_9434b.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_9434b.vcxproj -> C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-oyz50x\\Debug\\cmTC_9434b.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bdvm8d\\Debug\\cmTC_44693.exe" /INCREMENTAL /ILK:"cmTC_44693.dir\\Debug\\cmTC_44693.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-bdvm8d/Debug/cmTC_44693.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/senoide/build/CMakeFiles/CMakeScratch/TryCompile-bdvm8d/Debug/cmTC_44693.lib" /MACHINE:X64  /machine:x64 cmTC_44693.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_44693.vcxproj -> C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bdvm8d\\Debug\\cmTC_44693.exe
         FinalizeBuildStatus:
-          Excluindo o arquivo "cmTC_9434b.dir\\Debug\\cmTC_9434b.tlog\\unsuccessfulbuild".
-          Tocando "cmTC_9434b.dir\\Debug\\cmTC_9434b.tlog\\cmTC_9434b.lastbuildstate".
-        Projeto de compilação pronto "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-oyz50x\\cmTC_9434b.vcxproj" (destinos padrão).
+          Excluindo o arquivo "cmTC_44693.dir\\Debug\\cmTC_44693.tlog\\unsuccessfulbuild".
+          Tocando "cmTC_44693.dir\\Debug\\cmTC_44693.tlog\\cmTC_44693.lastbuildstate".
+        Projeto de compilação pronto "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Projetos\\github\\PDI\\senoide\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bdvm8d\\cmTC_44693.vcxproj" (destinos padrão).
         
         Compilação com êxito.
             0 Aviso(s)
             0 Erro(s)
         
-        Tempo Decorrido 00:00:00.55
+        Tempo Decorrido 00:00:00.47
         
       exitCode: 0
 ...
