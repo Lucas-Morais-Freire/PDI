@@ -4,6 +4,8 @@ project(senoide)
 set(OpenCV_DIR C:/OpenCV/opencv/build)
 find_package(OpenCV REQUIRED)
 
+add_compile_options(/W4)
+
 add_executable(${PROJECT_NAME} senoide.cpp)
 
 add_subdirectory(cpplot)

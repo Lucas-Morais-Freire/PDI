@@ -45,10 +45,7 @@ int main(int argc, char** argv) {
 
 	Graph g(-10, 10, -10, 10, "xres = 1000, yres = 500");
 
-	g.drawArrow(-10, 0, 10, 0);
-	g.drawArrow(0, -10, 0, 10);
-
-	g.drawFunc([](double x){return 2*(x+1)*x*(x-1);}, cv::Vec3b(128,128,0));
+	g.drawAxis(true, "tick_size=5");
 
 	g.write("../../output1.png");
 
