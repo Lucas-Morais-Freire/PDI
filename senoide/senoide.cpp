@@ -45,7 +45,8 @@ int main(int argc, char** argv) {
 
 	Graph g(-10, 10, -10, 10, "xres = 1000, yres = 500");
 
-	g.drawAxis(true, "tick_size=5");
+	g.drawAxis(true, 0, false, "draw_head = true, head_angle=45, ticks_to_left=false, half_ticks=false");
+	g.drawAxis(false, 0, false, "tick_size = 2.5, ticks_to_left=false");
 
 	g.write("../../output1.png");
 
