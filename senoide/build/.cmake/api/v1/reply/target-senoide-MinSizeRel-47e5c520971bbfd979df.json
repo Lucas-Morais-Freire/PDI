@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Release/senoide.exe"
+			"path" : "MinSizeRel/senoide.exe"
 		},
 		{
-			"path" : "Release/senoide.pdb"
+			"path" : "MinSizeRel/senoide.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -52,7 +52,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG"
 				},
 				{
 					"backtrace" : 3,
@@ -77,11 +77,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 2,
 			"id" : "cpplot::@3e43d1a01f22997d4332"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "senoide::@6890427a1f51a3e7e1df",
@@ -90,7 +90,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
@@ -99,7 +99,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "cpplot\\Release\\cpplot.lib",
+				"fragment" : "cpplot\\MinSizeRel\\cpplot.lib",
 				"role" : "libraries"
 			},
 			{

@@ -43,10 +43,12 @@ int main(int argc, char** argv) {
 
 	// return 0;
 
-	Graph g(-10, 10, -10, 10, "xres = 1000, yres = 500");
+	Graph g(-10, 10, -2.5, 2.5, "xres = 1000, yres = 500");
 
-	g.drawAxis(true, 0, false, "draw_head = true, head_angle=45, ticks_to_left=false, half_ticks=false");
-	g.drawAxis(false, 0, false, "tick_size = 2.5, ticks_to_left=false");
+	g.drawAxis(true, 0, false, "full_ticks = false");
+	g.drawAxis(false, 0, false, "ticks_to_left=false, full_ticks = true");
+	g.drawFunc(sin, cv::Vec3b(0,128,255));
+	g.drawFunc([](double x){return x*x;}, cv::Vec3b(200,200,50));
 
 	g.write("../../output1.png");
 
