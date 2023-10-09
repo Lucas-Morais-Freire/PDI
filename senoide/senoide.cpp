@@ -2,7 +2,6 @@
 #include <opencv2/opencv.hpp>
 #include <sstream>
 #include <string>
-#include <cmath>
 #include "cpplot/headers/cpplot.hpp"
 #ifndef M_PI
     #define M_PI 3.14159265358979323846
@@ -10,10 +9,6 @@
 
 int SIDE = 256;
 int PERIODOS = 4;
-
-double foo(double x) {
-	return 3*(x+1)*x*(x-1);
-}
 
 int main(int argc, char** argv) {
 	std::stringstream ss_img, ss_yml;

@@ -4,6 +4,6 @@ project(steganography)
 set(OpenCV_DIR C:/OpenCV/opencv/build)
 find_package(OpenCV REQUIRED)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} steganography.cpp)
 
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})

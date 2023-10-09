@@ -13,6 +13,9 @@ int main(int argc, char** argv) {
     if (image.empty()) {
         std::cout << "Abertura de imagem falhou.";
         return 0;
+    } else if (image.rows % 2 != 0 || image.cols % 2 != 0) {
+        std::cout << "A imagem deve possuir numero par de pixels em suas dimensoes.";
+        return 0;
     }
 
     uchar temp;
