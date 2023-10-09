@@ -16,41 +16,54 @@ double foo(double x) {
 }
 
 int main(int argc, char** argv) {
-	// std::stringstream ss_img, ss_yml;
-	// cv::Mat image;
+	std::stringstream ss_img, ss_yml;
+	cv::Mat image;
 
-	// ss_yml << "senoide-" << SIDE << ".yml";
-	// image = cv::Mat::zeros(SIDE, SIDE, CV_32FC1);
+	ss_yml << "senoide-" << SIDE << ".yml";
+	image = cv::Mat::zeros(SIDE, SIDE, CV_32FC1);
 
-	// cv::FileStorage fs(ss_yml.str(), cv::FileStorage::WRITE);
+	cv::FileStorage fs(ss_yml.str(), cv::FileStorage::WRITE);
 
-	// for (int i = 0; i < SIDE; i++) {
-	// for (int j = 0; j < SIDE; j++) {
-	// 	image.at<float>(i, j) = 127 * sin(2 * M_PI * PERIODOS * j / SIDE) + 128;
-	// }
-	// }
+	for (int i = 0; i < SIDE; i++) {
+	for (int j = 0; j < SIDE; j++) {
+		image.at<float>(i, j) = 127 * sin(2 * M_PI * PERIODOS * j / SIDE) + 128;
+	}
+	}
 
-	// fs << "mat" << image;
-	// fs.release();
+	fs << "mat" << image;
+	fs.release();
 
-	// cv::normalize(image, image, 0, 255, cv::NORM_MINMAX);
-	// image.convertTo(image, CV_8U);
-	// ss_img << "senoide-" << SIDE << ".png";
-	// cv::imwrite(ss_img.str(), image);
+	cv::normalize(image, image, 0, 255, cv::NORM_MINMAX);
+	image.convertTo(image, CV_8U);
+	ss_img << "senoide-" << SIDE << ".png";
+	cv::imwrite(ss_img.str(), image);
 
-	// fs.open(ss_yml.str(), cv::FileStorage::READ);
-	// fs["mat"] >> image;
+	cv::Mat imageyaml;
 
-	// return 0;
+	fs.open(ss_yml.str(), cv::FileStorage::READ);
+	fs["mat"] >> imageyaml;
 
-	Graph g(-10, 10, -2.5, 2.5, "xres = 1000, yres = 500");
+	cv::Mat imagepng = cv::imread("senoide-256.png", cv::IMREAD_GRAYSCALE);
 
-	g.drawAxis(true, 0, false, "full_ticks = false");
-	g.drawAxis(false, 0, false, "ticks_to_left=false, full_ticks = true");
-	g.drawFunc(sin, cv::Vec3b(0,128,255));
-	g.drawFunc([](double x){return x*x;}, cv::Vec3b(200,200,50));
+	std::vector<double> x;
+	for (int i = 0; i < 256; i++) {
+		x.push_back(i);
+	}
 
-	g.write("../../output1.png");
+	std::vector<double> y_png = imagepng.row(0);
+	std::vector<double> y_yaml = imageyaml.row(0);
+	std::vector<double> y;
+	for (int i = 0; i < 256; i++) {
+		y.push_back(y_png[i] - y_yaml[i]);
+	}
+
+	Graph g(0, 255, -1.5, 1, "xres = 1000, yres = 500");
+
+	g.drawAxis(true, 0, false);
+	g.drawAxis(false, 0, false, "ticks_to_left=false");
+	g.drawFunc(x, y, cv::Vec3b(0,0,255));
+
+	g.write("output1.png");
 
 	return 0;
 }
