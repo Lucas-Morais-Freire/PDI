@@ -3,7 +3,7 @@
 
 #define DECODE 0
 #define ENCODE 1
-#define SHOW_PLANES 2
+#define SHIFT_LEFT 2
 
 int main(int argc, char** argv) {
     
@@ -22,25 +22,25 @@ int main(int argc, char** argv) {
         } else if (std::strcmp(argv[1], "decode") == 0) {
             std::cout << "correct syntax for decoding is \"stenography decode <path-to-image>\".\n";
             return 0;
-        } else if (std::strcmp(argv[1], "show_planes") == 0) {
-            std::cout << "correct syntax for showing planes is \"stenography show_planes <path-to-image>\".\n";
+        } else if (std::strcmp(argv[1], "shift_left") == 0) {
+            std::cout << "correct syntax for showing planes is \"stenography shift_left <path-to-image>\".\n";
             return 0;
         } else {
-            std::cout << "valid options are \"encode\", \"decode\" or \"show_planes\".\n";
+            std::cout << "valid options are \"encode\", \"decode\" or \"shift_left\".\n";
             return 0;
         }
     } else if (argc == 3) {
         if (std::strcmp(argv[1], "decode") == 0) {
             h_img_path = argv[2];
             mode = DECODE;
-        } else if (std::strcmp(argv[1], "show_planes") == 0){
+        } else if (std::strcmp(argv[1], "shift_left") == 0){
             h_img_path = argv[2];
-            mode = SHOW_PLANES;
+            mode = SHIFT_LEFT;
         } else if (std::strcmp(argv[1], "encode") == 0) {
             std::cout << "correct syntax for encoding is \"stenography encode <path-to-encoding-image> <path-to-host-image>\".\n";
             return 0;
         } else {
-            std::cout << "valid options are \"encode\", \"decode\" and \"show_planes\".\n";
+            std::cout << "valid options are \"encode\", \"decode\" and \"shift_left\".\n";
             return 0;
         }
     } else if (argc == 4) {
@@ -51,8 +51,8 @@ int main(int argc, char** argv) {
         } else if (std::strcmp(argv[1], "decode") == 0) {
             std::cout << "correct syntax for decoding is \"stenography decode <path-to-image>\".\n";
             return 0;
-        } else if (std::strcmp(argv[1], "show_planes") == 0) {
-            std::cout << "correct syntax for showing planes is \"stenography show_planes <path-to-image>\".\n";
+        } else if (std::strcmp(argv[1], "shift_left") == 0) {
+            std::cout << "correct syntax for showing planes is \"stenography shift_left <path-to-image>\".\n";
             return 0;
         } else {
             std::cout << "valid options are \"encode\" and \"decode\".\n";
@@ -87,6 +87,11 @@ int main(int argc, char** argv) {
         
         cv::Mat h_img;
         h_img = cv::imread(h_img_path, cv::IMREAD_COLOR);
+
+        if (h_img.data == NULL) {
+            std::cout << "Nao foi possivel abrir a imagem.\n";
+            exit(-1);
+        }
 
         for (int i = 0; i < h_img.rows; i++) {
             for (int j = 0; j < h_img.cols; j++) {
