@@ -1,0 +1,7 @@
+# CMake generation dependency list for this directory.
+C:/OpenCV/opencv/build/OpenCVConfig-version.cmake
+C:/OpenCV/opencv/build/OpenCVConfig.cmake
+C:/OpenCV/opencv/build/x64/vc16/lib/OpenCVConfig.cmake
+C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/FindPackageMessage.cmake
+C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/dftimage/cpplot/CMakeLists.txt

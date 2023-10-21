@@ -1,0 +1,4 @@
+C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/dftimage/build/CMakeFiles/dftimage.dir
+C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/dftimage/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/dftimage/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/dftimage/build/cpplot/CMakeFiles/cpplot.dir
