@@ -98,7 +98,7 @@ int main(int argc, char** argv) {
     // cv::waitKey();
 
     Graph g(-2*M_PI, 2*M_PI, -2, 2);
-    g.setRes(200, 100);
+    g.setRes(1000, 500);
     g.drawArrow(-0.5, 0.5, 0.2, -0.3, {255, 0, 0})
         .setAngle(45)
         .setHeadSize(20)
@@ -108,6 +108,8 @@ int main(int argc, char** argv) {
         .setStrokeWeight(1);
 
     g.drawFunc(sin, {0,0,255});
+
+    g.drawAxis(true, 0, false);
 
     g.write("../../out.png");
 

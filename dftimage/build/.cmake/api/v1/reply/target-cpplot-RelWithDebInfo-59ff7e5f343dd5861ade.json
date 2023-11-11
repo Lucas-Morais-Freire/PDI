@@ -12,7 +12,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "cpplot/MinSizeRel/cpplot.lib"
+			"path" : "cpplot/RelWithDebInfo/cpplot.lib"
 		}
 	],
 	"backtrace" : 1,
@@ -52,7 +52,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 13,
+				"line" : 14,
 				"parent" : 0
 			}
 		]
@@ -63,7 +63,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG"
 				},
 				{
 					"backtrace" : 3,
@@ -84,7 +84,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -111,7 +112,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -139,6 +141,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "cpplot/src/func.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cpplot/src/axis.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
