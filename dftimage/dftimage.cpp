@@ -100,12 +100,12 @@ int main(int argc, char** argv) {
     Graph g(-2*M_PI, 2*M_PI, -2, 2);
     g.setRes(1000, 500);
     g.drawArrow(-0.5, 0.5, 0.2, -0.3, {255, 0, 0})
-        .setAngle(45)
-        .setHeadSize(20)
-        .setStrokeWeight(2);
+        .angle(45)
+        .headSize(20)
+        .strokeWeight(2);
 
     g.drawLine(0, 0, 0.1, 0.5)
-        .setStrokeWeight(1);
+        .strokeWeight(1);
 
     g.drawFunc(sin, {0,0,255});
 
