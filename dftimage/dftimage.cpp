@@ -97,21 +97,17 @@ int main(int argc, char** argv) {
 
     // cv::waitKey();
 
-    Graph g(-2*M_PI, 2*M_PI, -2, 2);
-    g.setRes(1000, 500);
-    g.drawArrow(-0.5, 0.5, 0.2, -0.3, {255, 0, 0})
-        .angle(45)
-        .headSize(20)
-        .strokeWeight(2);
+    Graph g(-2*M_PI, 2*M_PI, -2, 2); // cria um grafico que mostra a regiao -2pi <= x <= 2pi e -2 <= y <= 2
+    g.setRes(1000, 500); // seta a resolucao do grafico para 1000 largura x 500 altura
 
-    g.drawLine(0, 0, 0.1, 0.5)
-        .strokeWeight(1);
+    g.drawFunc(sin, {0,0,255}); // desenha a funcao seno na cor BGR = {0,0,255} (vermelho)
 
-    g.drawFunc(sin, {0,0,255});
+    g.drawAxis(true, 0, false); // desenha um eixo x (true), na posicao x = 0 absoluta (false).
 
-    g.drawAxis(true, 0, false);
+    g.drawAxis(false, 0, false) // desenha um eixo y (false), na posicao y = 0 absoluta (false)
+        .fullTicks(true);       // faz com que as marcacoes cruzem o eixo ao inves de pararem quando tocam o eixo
 
-    g.write("../../out.png");
+    g.write("../../out.png"); // escreve a imagem no caminho especificado.
 
     return EXIT_SUCCESS;
 }
