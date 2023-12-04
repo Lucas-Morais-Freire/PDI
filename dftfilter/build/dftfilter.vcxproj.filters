@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lucas\OneDrive\Área de Trabalho\Projetos\github\PDI\dftfilter\dftfilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lucas\OneDrive\Área de Trabalho\Projetos\github\PDI\dftfilter\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AC84DBAD-6D1E-3D56-9A85-D26D51B7B7CC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

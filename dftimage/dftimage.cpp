@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <opencv2/opencv.hpp>
+#include <algorithm>
 #include "cpplot/headers/cpplot.hpp"
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
@@ -37,77 +38,87 @@ void swapQuadrants(cv::Mat& image) {
 }
 
 int main(int argc, char** argv) {
-    // cv::Mat image, padded, complexImage;
-    // std::vector<cv::Mat> planos; 
+    cv::Mat image, padded, complexImage;
+    std::vector<cv::Mat> planos; 
 
-    // image = imread(argv[1], cv::IMREAD_GRAYSCALE);
+    // image = imread("../../senoide.png", cv::IMREAD_GRAYSCALE);
     // if (image.empty()) {
-    // std::cout << "Erro abrindo imagem" << argv[1] << std::endl;
-    // return EXIT_FAILURE;
+    //     std::cout << "Erro abrindo imagem" << argv[1] << std::endl;
+    //     return EXIT_FAILURE;
     // }
 
-    // // expande a imagem de entrada para o melhor tamanho no qual a DFT pode ser
-    // // executada, preenchendo com zeros a lateral inferior direita.
-    // int dft_M = cv::getOptimalDFTSize(image.rows);
-    // int dft_N = cv::getOptimalDFTSize(image.cols); 
-    // cv::copyMakeBorder(image, padded, 0, dft_M - image.rows, 0, dft_N - image.cols, cv::BORDER_CONSTANT, cv::Scalar::all(0));
+    cv::FileStorage fs("../../senoide.yml", cv::FileStorage::READ);
 
-    // // prepara a matriz complexa para ser preenchida
-    // // primeiro a parte real, contendo a imagem de entrada
-    // planos.push_back(cv::Mat_<float>(padded)); 
-    // // depois a parte imaginaria com valores nulos
-    // planos.push_back(cv::Mat::zeros(padded.size(), CV_32F));
+    if (!fs.isOpened()) {
+        std::cerr << "Erro ao abrir o arquivo YAML." << std::endl;
+        return -1;
+    }
 
-    // // combina os planos em uma unica estrutura de dados complexa
-    // cv::merge(planos, complexImage);  
+    fs["mat"] >> image;
 
-    // // calcula a DFT
-    // cv::dft(complexImage, complexImage); 
-    // swapQuadrants(complexImage);
+    if (image.empty()) {
+        std::cerr << "Erro ao ler a imagem advinda do arquivo." << std::endl;
+        return -1;
+    }
 
-    // // planos[0] : Re(DFT(image)
-    // // planos[1] : Im(DFT(image)
-    // cv::split(complexImage, planos);
+    // expande a imagem de entrada para o melhor tamanho no qual a DFT pode ser
+    // executada, preenchendo com zeros a lateral inferior direita.
+    int dft_M = cv::getOptimalDFTSize(image.rows);
+    int dft_N = cv::getOptimalDFTSize(image.cols); 
+    cv::copyMakeBorder(image, padded, 0, dft_M - image.rows, 0, dft_N - image.cols, cv::BORDER_CONSTANT, cv::Scalar::all(0));
 
-    // // calcula o espectro de magnitude e de fase (em radianos)
-    // cv::Mat magn, fase;
-    // cv::cartToPolar(planos[0], planos[1], magn, fase, false);
-    // cv::normalize(fase, fase, 0, 1, cv::NORM_MINMAX);
+    // prepara a matriz complexa para ser preenchida
+    // primeiro a parte real, contendo a imagem de entrada
+    planos.push_back(cv::Mat_<float>(padded)); 
+    // depois a parte imaginaria com valores nulos
+    planos.push_back(cv::Mat::zeros(padded.size(), CV_32F));
 
-    // // caso deseje apenas o espectro de magnitude da DFT, use:
-    // cv::magnitude(planos[0], planos[1], magn); 
+    // combina os planos em uma unica estrutura de dados complexa
+    cv::merge(planos, complexImage);  
 
-    // // some uma constante para evitar log(0)
-    // // log(1 + sqrt(Re(DFT(image))^2 + Im(DFT(image))^2))
-    // magn += cv::Scalar::all(1);
+    // calcula a DFT
+    cv::dft(complexImage, complexImage); 
+    swapQuadrants(complexImage);
 
-    // // calcula o logaritmo da magnitude para exibir
-    // // com compressao de faixa dinamica
-    // log(magn, magn);
-    // cv::normalize(magn, magn, 0, 1, cv::NORM_MINMAX);
+    // planos[0] : Re(DFT(image)
+    // planos[1] : Im(DFT(image)
+    cv::split(complexImage, planos);
 
-    // cv::namedWindow("imagem", cv::WINDOW_NORMAL);
-    // cv::namedWindow("Espectro de magnitude", cv::WINDOW_NORMAL);
-    // cv::namedWindow("Espectro de fase", cv::WINDOW_NORMAL);
+    // calcula o espectro de magnitude e de fase (em radianos)
+    cv::Mat magn, fase;
+    cv::cartToPolar(planos[0], planos[1], magn, fase, false);
+    cv::normalize(fase, fase, 0, 1, cv::NORM_MINMAX);
 
-    // // exibe as imagens processadas
-    // cv::imshow("Imagem", image);  
-    // cv::imshow("Espectro de magnitude", magn);
-    // cv::imshow("Espectro de fase", fase);
+    // caso deseje apenas o espectro de magnitude da DFT, use:
+    cv::magnitude(planos[0], planos[1], magn); 
 
-    // cv::waitKey();
+    // some uma constante para evitar log(0)
+    // log(1 + sqrt(Re(DFT(image))^2 + Im(DFT(image))^2))
+    magn += cv::Scalar::all(1);
 
-    Graph g(-2*M_PI, 2*M_PI, -2, 2); // cria um grafico que mostra a regiao -2pi <= x <= 2pi e -2 <= y <= 2
-    g.setRes(1000, 500); // seta a resolucao do grafico para 1000 largura x 500 altura
+    // calcula o logaritmo da magnitude para exibir
+    // com compressao de faixa dinamica
+    log(magn, magn);
+    
+    cv::Mat magn_row = magn.row(magn.rows/2);
+    std::vector<float> aux(magn_row.begin<float>(), magn_row.end<float>());
+    std::vector<double> row_spec(aux.begin(), aux.end());
 
-    g.drawFunc(sin, {0,0,255}); // desenha a funcao seno na cor BGR = {0,0,255} (vermelho)
+    double min_x = -1;
+    double max_x = 1;
+    Graph g(min_x,max_x,-0.5,*(std::max_element(row_spec.begin(), row_spec.end())) + 0.5);
 
-    g.drawAxis(true, 0, false); // desenha um eixo x (true), na posicao x = 0 absoluta (false).
+    g.drawAxis(true, 0, false)
+        .drawNumbers(false);
 
-    g.drawAxis(false, 0, false) // desenha um eixo y (false), na posicao y = 0 absoluta (false)
-        .fullTicks(true);       // faz com que as marcacoes cruzem o eixo ao inves de pararem quando tocam o eixo
+    std::vector<double> x_vals(row_spec.size());
+    for (int i = 0; i < row_spec.size(); i++) {
+        x_vals[i] = min_x + (max_x - min_x)/(row_spec.size() - 1)*i;
+    }
 
-    g.write("../../out.png"); // escreve a imagem no caminho especificado.
+    g.drawFunc(x_vals, row_spec, {0,0,255});
+
+    g.write("./out.png");
 
     return EXIT_SUCCESS;
 }
