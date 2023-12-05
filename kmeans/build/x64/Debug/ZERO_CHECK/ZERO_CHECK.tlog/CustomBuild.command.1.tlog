@@ -1,0 +1,10 @@
+^C:\USERS\LUCAS\ONEDRIVE\ÁREA DE TRABALHO\PROJETOS\GITHUB\PDI\KMEANS\BUILD\CMAKEFILES\60AB5252548D34316D6B8CF16F5F3953\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/kmeans" "-BC:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/kmeans/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/lucas/OneDrive/Área de Trabalho/Projetos/github/PDI/kmeans/build/kmeans.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
